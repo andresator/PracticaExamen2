@@ -10,12 +10,12 @@ import modelo.Libro;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-@Named(value = "estudianteController")
+@Named(value = "libroController")
 @SessionScoped
-public class EstudianteController extends Libro implements Serializable {
+public class LibroController extends Libro implements Serializable {
 
   
-    public EstudianteController() {
+    public LibroController() {
     }
     
     public String inserta (){
@@ -59,17 +59,17 @@ public class EstudianteController extends Libro implements Serializable {
     
     public String edita (String id){
         
-        Estudiante estudiante=  LibroGestion.getEstudiante(id);
+        Libro libro=  LibroGestion.getLibro(id);
         
-        if (estudiante !=null){
+        if (libro !=null){
             
-            this.setId(estudiante.getId());
-            this.setNombre(estudiante.getNombre());
-            this.setApellido1(estudiante.getApellido1());
-            this.setApellido2(estudiante.getApellido2());
-            this.setFechaNaci(estudiante.getFechaNaci());
-            this.setFechaIngr(estudiante.getFechaIngr());
-            this.setGenero(estudiante.getGenero());
+            this.setId(libro.getId());
+            this.setTitulo(libro.getTitulo());
+            this.setEditorial(libro.getEditorial());
+            this.setYear(libro.getYear());
+            this.setVersion(libro.getVersion());
+            this.setAutor(libro.getAutor());
+            this.setTematica(libro.getTematica());
             return "edita.xhtml";
         }else{
             
@@ -82,8 +82,8 @@ public class EstudianteController extends Libro implements Serializable {
     }
     
     
-    public List<Estudiante> getEstudiantes(){
-        return LibroGestion.getEstudiantes();
+    public List<Libro> getLibros(){
+        return LibroGestion.getLibros();
     }
     
     private boolean noImprimir = true; // Para habilitar o deshabilitar el botón que imprime la certificación
@@ -98,24 +98,26 @@ public class EstudianteController extends Libro implements Serializable {
     
     public void buscaEstudiante (String id){
         
-        Estudiante estudiante = LibroGestion.getEstudiante(id);
+        Libro libro = LibroGestion.getLibro(id);
         
-        if (estudiante!=null){
-            this.setId(estudiante.getId());
-            this.setNombre(estudiante.getNombre());
-            this.setApellido1(estudiante.getApellido1());
-            this.setApellido2(estudiante.getApellido2());
-            this.setFechaNaci(estudiante.getFechaNaci());
-            this.setFechaIngr(estudiante.getFechaIngr());
+        if (libro!=null){
+            this.setId(libro.getId());
+            this.setTitulo(libro.getTitulo());
+            this.setEditorial(libro.getEditorial());
+            this.setYear(libro.getYear());
+            this.setVersion(libro.getVersion());
+            this.setAutor(libro.getAutor());
+            this.setTematica(libro.getTematica());
             this.noImprimir= false;
         }else{
             
             this.setId("");
-            this.setNombre("");
-            this.setApellido1("");
-            this.setApellido2("");
-            this.setFechaNaci(null);
-            this.setFechaIngr(null);
+            this.setTitulo("");
+            this.setEditorial("");
+            this.setYear(0);
+            this.setVersion(0);
+            this.setAutor("");
+            this.setTematica("");
             FacesMessage mensaje= new FacesMessage (FacesMessage.SEVERITY_WARN, "No Encontrado",
             "Estudiante no Encontrado");
             FacesContext.getCurrentInstance().addMessage("certificacionEstudianteForm:identificacion", mensaje);
