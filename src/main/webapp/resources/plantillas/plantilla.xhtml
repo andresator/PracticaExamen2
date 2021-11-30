@@ -15,34 +15,15 @@
 
     <h:body>
 
-        <b:navBar fluid="true" brand="Sistema"
-                  brandHref="/Lec03-1/faces/principal.xhtml">
+        <b:navBar fluid="true" brand="Biblioteca"
+                  brandHref="/PracticaExamen2/faces/principal.xhtml">
             <b:navbarLinks pull="left">
                 <b:image library="images" name="logo.png" height="55px"/>
             </b:navbarLinks>
-            <b:navbarLinks>
-                <b:dropMenu value="Estudiantes" icon-awesome="fa-group">
-                    <b:navLink value="Gestión" icon="fa-newspaper-o"
-                               href="/Lec03-1/faces/estudiante/list.xhtml"/>
-                    <b:navLink value="Matrícula" href="#"/>
-                    <b:navLink value="Expediente" href="#"/>
-                    <b:dropMenu value="Certificaciones" icon-awesome="fa-group">
-                        <b:navLink value="Notas" href="/Lec03-1/faces/reportes/certificacion.xhtml"/>
-                        <b:navLink value="CONAPE" href="#"/>
-                    </b:dropMenu>
-                </b:dropMenu>
-                <b:dropMenu value="Prospectos" icon-awesome="fa-group">
-                    <b:navLink value="Registro" href="/Lec03-1/faces/prospecto/registro.xhtml"/>
-                    <b:navLink value="Reporte" href="/Lec03-1/faces/prospecto/reporte.xhtml"/>
-                </b:dropMenu>
-                <b:navLink value="Cliente 01" href="/Lec03-1/faces/cliente01.xhtml"/>
-                <b:navLink value="Cliente 02" href="/Lec03-1/faces/cliente02.xhtml"/>
-            </b:navbarLinks>
-            
             <b:navbarLinks pull="right" style-class="hidden-xs">
                 <b:dropMenu value="Configuración" icon-awesome="fa-cog">
                     <b:navLink value="Cerrar"
-                               href="/Lec03-1/faces/index.xhtml"
+                               href="/PracticaExamen2/faces/index.xhtml"
                                icon-awesome="fa-door-open"/>
                     <b:navLink value="Perfil" icon-awesome="fa-user" href="#"/>
                     <b:navLink value="Temas">

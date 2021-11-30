@@ -4,15 +4,15 @@ package controller;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import gestion.EstudianteGestion;
+import gestion.LibroGestion;
 import java.util.List;
-import modelo.Estudiante;
+import modelo.Libro;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 @Named(value = "estudianteController")
 @SessionScoped
-public class EstudianteController extends Estudiante implements Serializable {
+public class EstudianteController extends Libro implements Serializable {
 
   
     public EstudianteController() {
@@ -20,7 +20,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     public String inserta (){
         
-        if (EstudianteGestion.insertar(this)){
+        if (LibroGestion.insertar(this)){
             return "list.xhtml";
         }else{
             FacesMessage mensaje= new FacesMessage(FacesMessage.SEVERITY_ERROR,
@@ -32,7 +32,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     public String modifica (){
         
-        if (EstudianteGestion.actualiza(this)){
+        if (LibroGestion.actualiza(this)){
             return "list.xhtml";
             
         }else{
@@ -46,7 +46,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     public String elimina (){
         
-        if (EstudianteGestion.eliminar(this)){
+        if (LibroGestion.eliminar(this)){
             return "list.xhtml";
         }else{
             FacesMessage mensaje= new FacesMessage (FacesMessage.SEVERITY_ERROR,
@@ -59,7 +59,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     public String edita (String id){
         
-        Estudiante estudiante=  EstudianteGestion.getEstudiante(id);
+        Estudiante estudiante=  LibroGestion.getEstudiante(id);
         
         if (estudiante !=null){
             
@@ -83,7 +83,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     
     public List<Estudiante> getEstudiantes(){
-        return EstudianteGestion.getEstudiantes();
+        return LibroGestion.getEstudiantes();
     }
     
     private boolean noImprimir = true; // Para habilitar o deshabilitar el botón que imprime la certificación
@@ -98,7 +98,7 @@ public class EstudianteController extends Estudiante implements Serializable {
     
     public void buscaEstudiante (String id){
         
-        Estudiante estudiante = EstudianteGestion.getEstudiante(id);
+        Estudiante estudiante = LibroGestion.getEstudiante(id);
         
         if (estudiante!=null){
             this.setId(estudiante.getId());
