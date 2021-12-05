@@ -8,19 +8,19 @@
         <title>Edición de Estudiantes</title>
     </h:head>
     <h:body>
-         <ui:composition template="./../resources/plantillas/plantilla.xhtml">
+         <ui:composition template="resources/plantillas/plantilla.xhtml">
             <ui:define name="content">
-                <h:form id="editaEstudianteForm">
-                    <b:panel title="Estudiante" look="primary">
+                <h:form id="editaLibroForm">
+                    <b:panel title="Libro" look="primary">
                         
                         <b:row tooltip="La identificación no se modifica">
                             <b:column medium-screen="2">
                                 <h:outputLabel value="Identificación" for="identificacion"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:inputText placeholder="Identificación" id="identificacion"
+                                <b:inputText placeholder="ID Libro" id="id"
                                              required="true"
-                                             value="#{estudianteController.id}"/>
+                                             value="#{libroController.id}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
                                 <b:message for="identificacion"/>
@@ -29,106 +29,98 @@
                         
                         <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Nombre" for="nombre"/>
+                                <h:outputLabel value="Titulo" for="titulo"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:inputText placeholder="Nombre" id="nombre"
+                                <b:inputText placeholder="Titulo" id="titulo"
                                              required="true"
-                                             value="#{estudianteController.nombre}"/>
+                                             value="#{libroController.titulo}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="nombre"/>
+                                <b:message for="titulo"/>
                             </b:column>  
                         </b:row>
                         
                         <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Primer Apellido" for="apellido1"/>
+                                <h:outputLabel value="Editorial" for="editorial"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:inputText placeholder="Primer Apellido" id="apellido1"
+                                <b:inputText placeholder="Editorial" id="editorial"
                                              required="true"
-                                             value="#{estudianteController.apellido1}"/>
+                                             value="#{libroController.editorial}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="apellido1"/>
+                                <b:message for="editorial"/>
                             </b:column>  
                         </b:row>
                         
                          <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Segundo Apellido" for="apellido2"/>
+                                <h:outputLabel value="Año" for="year"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:inputText placeholder="Segundo Apellido" id="apellido2"
+                                <b:inputText placeholder="year" id="year"
                                              required="true"
-                                             value="#{estudianteController.apellido2}"/>
+                                             value="#{libroController.year}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="apellido2"/>
+                                <b:message for="year"/>
                             </b:column>  
                         </b:row>
                         
                         <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Fecha de Nacimiento" for="fechaNaci"/>
+                                <h:outputLabel value="Version" for="version"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:dateTimePicker id="fechaNaci"
-                                                  required="true"
-                                                  value="#{estudianteController.fechaNaci}"/>
+                                <b:inputText placeholder="version" id="version"
+                                             required="true"
+                                             value="#{libroController.version}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="fechaNaci"/>
+                                <b:message for="version"/>
                             </b:column>        
                         </b:row>
                         
                          <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Fecha de Ingreso" for="fechaIngr"/>
+                                <h:outputLabel value="Autor" for="autor"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:dateTimePicker id="fechaIngr"
-                                                  required="true"
-                                                  value="#{estudianteController.fechaIngr}"/>
+                                <b:inputText placeholder="autor" id="autor"
+                                             required="true"
+                                             value="#{libroController.autor}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="fechaIngr"/>
+                                <b:message for="autor"/>
                             </b:column>        
                         </b:row>
                         
                         <b:row>
                             <b:column medium-screen="2">
-                                <h:outputLabel value="Género" for="genero"/>
+                                <h:outputLabel value="Temática" for="tematica"/>
                             </b:column>
                             <b:column medium-screen="4">
-                                <b:panelGrid size="" columns="2">
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Masculino"
-                                                   itemValue="M"/>
-                                    <b:radiobutton value="#{estudianteController.genero}"
-                                                   itemLabel="Femenino"
-                                                   itemValue="F"/>
-                                </b:panelGrid>
+                                <b:inputText placeholder="tematica" id="tematica"
+                                             required="true"
+                                             value="#{libroController.tematica}"/>
                             </b:column>
                             <b:column medium-screen="6" style-class="message">
-                                <b:message for="genero"/>
+                                <b:message for="tematica"/>
                             </b:column>
                         </b:row>
                         
                         <b:row>
                             <b:column medium-screen="2"/>
                             <b:column medium-screen="6">
-                                <b:commandButton value="Insertar"
-                                                 action="#{estudianteController.inserta()}"
-                                                 look="primary"
-                                                 style="width: 33%"/>
+                                
                                 <b:commandButton value="Eliminar"
-                                                 action="#{estudianteController.elimina()}"
+                                                 action="#{libroController.elimina()}"
                                                  look="danger"
                                                  style="width: 33%"/>
                                 <b:commandButton value="Modificar"
-                                                 action="#{estudianteController.modifica()}"
+                                                 action="#{libroController.modifica()}"
                                                  look="success"
                                                  style="width: 33%"/>                
                             </b:column> 

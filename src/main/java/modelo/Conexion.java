@@ -13,14 +13,14 @@ public class Conexion {
     
     private static Conexion conexion;
     //String de conexión a la base de datos
-    private static final String DBURL = "jdbc:mysql://localhost:3306/ugeneral?serverTimezone=UTC";
+    private static final String DBURL = "jdbc:mysql://localhost:3306/biblioteca?serverTimezone=UTC";
     private static Connection conn=null;
     
     private Conexion(){
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-            conn= DriverManager.getConnection(DBURL,"ugeneral_user","Prueba123_");
+            conn= DriverManager.getConnection(DBURL,"biblioteca_user","Dp123456");
         }catch (ClassNotFoundException | SQLException | NoSuchMethodException | SecurityException | 
                 InstantiationException | IllegalAccessException | IllegalArgumentException 
                 | InvocationTargetException ex){

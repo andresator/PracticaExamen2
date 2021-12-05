@@ -76,12 +76,12 @@ public class ReporteController implements Serializable {
         }
         
     }
-    
-     public void certificaNotas(Estudiante estudiante){
+    /*
+     public void certificaNotas(Libro libro){
         
          Map<String,Object> parametros = new HashMap<>();
-         parametros.put("id",estudiante.getId());
-         parametros.put("nombre",estudiante.getNombreCompleto());
+         parametros.put("id",libro.getId());
+         parametros.put("nombre",libro.getTitulo());
          
         try{
             File jasper= new File (FacesContext.getCurrentInstance().getExternalContext()
@@ -104,5 +104,5 @@ public class ReporteController implements Serializable {
         }
         
     }
-    
+    */
 }

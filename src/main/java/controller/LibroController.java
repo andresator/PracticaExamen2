@@ -25,8 +25,8 @@ public class LibroController extends Libro implements Serializable {
         }else{
             FacesMessage mensaje= new FacesMessage(FacesMessage.SEVERITY_ERROR,
                     "Error","Posible Identificación Duplicada");
-            FacesContext.getCurrentInstance().addMessage("editaEstudianteForm:identificacion", mensaje);
-            return "edita.xhtml";
+            FacesContext.getCurrentInstance().addMessage("editaLibroForm:identificacion", mensaje);
+            return "inserta.xhtml";
         }
     }
     

@@ -13,20 +13,20 @@ import java.util.ArrayList;
 
 public class LibroGestion {
 
-    private static final String SQL_INSERT_LIBRO = "insert into libros (idLibro, titulo,"
+    private static final String SQL_INSERT_LIBRO = "insert into libros (id, titulo,"
             + "editorial,year,version,autor,tematica) values (?,?,?,?,?,?,?)";
     
     public static boolean insertar (Libro libro){
         
         try{
             PreparedStatement sentencia=  Conexion.getConexion().prepareCall(SQL_INSERT_LIBRO);
-            sentencia.setString(1,libro.getId());
-            sentencia.setString(2,libro.getTitulo());
-            sentencia.setString(3,libro.getEditorial());
-            sentencia.setInt(4,libro.getYear());
-            sentencia.setInt(5,libro.getVersion());
-            sentencia.setString(6,libro.getAutor());
-            sentencia.setString(7,libro.getTematica());
+            sentencia.setString(2,libro.getId());
+            sentencia.setString(3,libro.getTitulo());
+            sentencia.setString(4,libro.getEditorial());
+            sentencia.setInt(5,libro.getYear());
+            sentencia.setInt(6,libro.getVersion());
+            sentencia.setString(7,libro.getAutor());
+            sentencia.setString(8,libro.getTematica());
             
             return sentencia.executeUpdate()>0;//Devuelve un true en caso de que sea posible insertar el registro
             
@@ -37,7 +37,7 @@ public class LibroGestion {
         return false;
     }
     
-    private static final String SQL_SELECT_LIBRO = "select * from libros where idLibro=?";
+    private static final String SQL_SELECT_LIBRO = "select * from libros where id=?";
     
     public static Libro getLibro(String id){
         
@@ -67,7 +67,7 @@ public class LibroGestion {
     } 
     
     private static final String SQL_UPDATE_LIBRO = "update libros set titulo=?,editorial=?,"
-            + "year=?,version=?,autor=?,tematica=? where idLibro=?";
+            + "year=?,version=?,autor=?,tematica=? where id=?";
     
     public static boolean actualiza (Libro libro){
         
@@ -91,7 +91,7 @@ public class LibroGestion {
         
     }
     
-    private static final String SQL_DELETE_LIBRO = "delete from libros where idLibro=?";
+    private static final String SQL_DELETE_LIBRO = "delete from libros where id=?";
     
     public static boolean eliminar (Libro libro){
         

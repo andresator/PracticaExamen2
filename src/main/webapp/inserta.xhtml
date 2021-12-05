@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Edición de Estudiantes</title>
+    </h:head>
+    <h:body>
+         <ui:composition template="resources/plantillas/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="editaLibroForm">
+                    <b:panel title="Libro" look="primary">
+                        
+                        <b:row tooltip="La identificación no se modifica">
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificación" for="identificacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="ID Libro" id="id"
+                                             required="true"
+                                             value="#{libroController.id}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="identificacion"/>
+                            </b:column>  
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Titulo" for="titulo"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Titulo" id="titulo"
+                                             required="true"
+                                             value="#{libroController.titulo}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="titulo"/>
+                            </b:column>  
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Editorial" for="editorial"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Editorial" id="editorial"
+                                             required="true"
+                                             value="#{libroController.editorial}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="editorial"/>
+                            </b:column>  
+                        </b:row>
+                        
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Año" for="year"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="year" id="year"
+                                             required="true"
+                                             value="#{libroController.year}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="year"/>
+                            </b:column>  
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Version" for="version"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="version" id="version"
+                                             required="true"
+                                             value="#{libroController.version}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="version"/>
+                            </b:column>        
+                        </b:row>
+                        
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Autor" for="autor"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="autor" id="autor"
+                                             required="true"
+                                             value="#{libroController.autor}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="autor"/>
+                            </b:column>        
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Temática" for="tematica"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="tematica" id="tematica"
+                                             required="true"
+                                             value="#{libroController.tematica}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="tematica"/>
+                            </b:column>
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2"/>
+                            <b:column medium-screen="6">
+                                
+                                <b:commandButton value="Insertar"
+                                                 action="#{libroController.inserta}"
+                                                 look="primary"
+                                                 style="width: 33%"/>
+                
+                            </b:column> 
+                        </b:row>     
+                    </b:panel>
+                </h:form>  
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
